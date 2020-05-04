@@ -99,6 +99,7 @@
 		73959381246026BB00EFF6CB /* SwipeAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				739593B22460331000EFF6CB /* SwipeComponent */,
 				73959382246026BB00EFF6CB /* AppDelegate.swift */,
 				73959384246026BB00EFF6CB /* SceneDelegate.swift */,
 				73959386246026BB00EFF6CB /* ViewController.swift */,
@@ -126,6 +127,13 @@
 				739593A6246026BD00EFF6CB /* Info.plist */,
 			);
 			path = SwipeAnimationUITests;
+			sourceTree = "<group>";
+		};
+		739593B22460331000EFF6CB /* SwipeComponent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SwipeComponent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
