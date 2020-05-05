@@ -14,7 +14,7 @@ class SwipeViewContainer: UIView {
     var arrLoadedCards: [CardView] = [CardView]()
     var topView: CardView?
     var loadedCardIndex: Int = 0
-    let MaxLoadedCount = 5
+    let maxLoadedCardCapacity = 5
     
     private func createCardView(at index: Int) -> CardView {
         let card = CardView.init(frame: CGRect.init(x: 10, y: 130, width: 200, height: 200))
@@ -27,11 +27,10 @@ class SwipeViewContainer: UIView {
             let card = createCardView(at: index)
             arrCards.append(card)
             
-            if index < MaxLoadedCount {
+            if index < maxLoadedCardCapacity {
                 arrLoadedCards.append(card)
             }
         }
-        
         
         for loadIndex in 0..<arrLoadedCards.count {
             let cardView = arrLoadedCards[loadIndex]

@@ -45,8 +45,11 @@ class CardView: UIView {
         lblTitle.translatesAutoresizingMaskIntoConstraints = false
         Constraints.leadingConstraint(control: lblTitle, parent: self, constant: 10)
         Constraints.trailingConstraint(control: lblTitle, parent: self, constant: -10)
+        Constraints.horizontalConstraint(control: lblTitle, parent: self, constant: 0)
         Constraints.topConstraint(control: lblTitle, parent: self, constant: 70)
-        Constraints.bottomConstraint(control: lblTitle, parent: self, constant: -50)
+        Constraints.heightConstraint(control: lblTitle, controlHeight: 21)
+        
+        lblTitle.textAlignment = .center
     }
     
     private func setupView() {
@@ -77,14 +80,14 @@ class CardView: UIView {
             transform = scaleTransform
             
         case .ended:
-            afterSwipe()
+            swipeEnded()
             
         default:
             break
         }
     }
     
-    private func afterSwipe() {
+    private func swipeEnded() {
         if (xFromCenter > self.frame.size.width/2.5) {
             swipeRight()
         }
