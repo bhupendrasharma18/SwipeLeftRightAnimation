@@ -14,10 +14,11 @@ class SwipeViewContainer: UIView {
     var arrLoadedCards: [CardView] = [CardView]()
     var topView: CardView?
     var loadedCardIndex: Int = 0
+    let MaxLoadedCount = 5
     
     private func createCardView(at index: Int) -> CardView {
         let card = CardView.init(frame: CGRect.init(x: 10, y: 130, width: 200, height: 200))
-        card.backgroundColor = .red
+        card.backgroundColor = UIColor.random
         return card
     }
     
@@ -26,7 +27,9 @@ class SwipeViewContainer: UIView {
             let card = createCardView(at: index)
             arrCards.append(card)
             
-            arrLoadedCards.append(card)
+            if index < MaxLoadedCount {
+                arrLoadedCards.append(card)
+            }
         }
         
         
@@ -38,7 +41,7 @@ class SwipeViewContainer: UIView {
             else {
                 addSubview(cardView)
             }
-            addConstraiintsToCard(cardView: cardView)
+            setupCard(cardView: cardView, title: "\(loadIndex)")
             loadedCardIndex += 1
         }
     }
@@ -50,5 +53,30 @@ class SwipeViewContainer: UIView {
         Constraints.topConstraint(control: cardView, parent: self, constant: 100)
         Constraints.bottomConstraint(control: cardView, parent: self, constant: -150)
     }
+    
+    private func removeTopCardFromArray() {
+        if arrLoadedCards.count > 0 {
+            arrLoadedCards.removeFirst()
+            if loadedCardIndex < arrCards.count {
+                let cardView = arrCards[loadedCardIndex]
+                arrLoadedCards.append(cardView)
+                insertSubview(arrLoadedCards.last!, belowSubview: arrLoadedCards[arrLoadedCards.count - 2])
+                setupCard(cardView: cardView, title: "\(loadedCardIndex)")
+                loadedCardIndex += 1
+            }
+        }
+    }
+    
+    private func setupCard(cardView: CardView!, title: String!) {
+        addConstraiintsToCard(cardView: cardView)
+        cardView.lblTitle.text = title
+        cardView.delegate = self
+    }
 
+}
+
+extension SwipeViewContainer: CardViewProtocol {
+    func removeTopCard() {
+        removeTopCardFromArray()
+    }
 }
