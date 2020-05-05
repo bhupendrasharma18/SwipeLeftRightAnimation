@@ -15,6 +15,9 @@
 		7395938F246026BD00EFF6CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7395938D246026BD00EFF6CB /* LaunchScreen.storyboard */; };
 		7395939A246026BD00EFF6CB /* SwipeAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73959399246026BD00EFF6CB /* SwipeAnimationTests.swift */; };
 		739593A5246026BD00EFF6CB /* SwipeAnimationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739593A4246026BD00EFF6CB /* SwipeAnimationUITests.swift */; };
+		739593B4246103CE00EFF6CB /* SwipeViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739593B3246103CE00EFF6CB /* SwipeViewContainer.swift */; };
+		739593B6246104CD00EFF6CB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739593B5246104CD00EFF6CB /* CardView.swift */; };
+		739593B92461060F00EFF6CB /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739593B82461060F00EFF6CB /* Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		739593A0246026BD00EFF6CB /* SwipeAnimationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwipeAnimationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		739593A4246026BD00EFF6CB /* SwipeAnimationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeAnimationUITests.swift; sourceTree = "<group>"; };
 		739593A6246026BD00EFF6CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		739593B3246103CE00EFF6CB /* SwipeViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewContainer.swift; sourceTree = "<group>"; };
+		739593B5246104CD00EFF6CB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		739593B82461060F00EFF6CB /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 		73959376246026BB00EFF6CB = {
 			isa = PBXGroup;
 			children = (
+				739593B7246105D600EFF6CB /* Utility */,
 				73959381246026BB00EFF6CB /* SwipeAnimation */,
 				73959398246026BD00EFF6CB /* SwipeAnimationTests */,
 				739593A3246026BD00EFF6CB /* SwipeAnimationUITests */,
@@ -132,8 +139,18 @@
 		739593B22460331000EFF6CB /* SwipeComponent */ = {
 			isa = PBXGroup;
 			children = (
+				739593B3246103CE00EFF6CB /* SwipeViewContainer.swift */,
+				739593B5246104CD00EFF6CB /* CardView.swift */,
 			);
 			path = SwipeComponent;
+			sourceTree = "<group>";
+		};
+		739593B7246105D600EFF6CB /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				739593B82461060F00EFF6CB /* Constraints.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,8 +285,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				73959387246026BB00EFF6CB /* ViewController.swift in Sources */,
+				739593B4246103CE00EFF6CB /* SwipeViewContainer.swift in Sources */,
 				73959383246026BB00EFF6CB /* AppDelegate.swift in Sources */,
 				73959385246026BB00EFF6CB /* SceneDelegate.swift in Sources */,
+				739593B92461060F00EFF6CB /* Constraints.swift in Sources */,
+				739593B6246104CD00EFF6CB /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
